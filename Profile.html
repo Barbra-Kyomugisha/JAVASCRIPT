@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+
+    <h2>Friends'profile</h2>
+
+    <div id="profile">
+    </div>
+
+    <script> 
+    function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const pairs = queryString.split("&");
+        pairs.forEach(pair => {
+            const [key, value] = pair.split("=");
+            params[decodeURIComponent(key)] = decodeURIComponent(value);
+        }
+        );
+        return params;
+    }
+
+    const params = getQueryParams();
+
+    const profileDiv = document.getElementById('profile');
+    if (params.name && params.email) {
+        profileDiv.innerHTML = `<p><strong>name:</strong> ${params.name}</p>
+        <p><strong>email:</strong> ${params.email}</p>`;
+
+    } else {
+        profileDiv.innerHTML = `<p>no profile information available.</p>`;
+    }
+    </script>
+    
+</body>
+</html>

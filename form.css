@@ -1,0 +1,65 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_pgoHuvuMGt_8ovZZra-dq4ZuQCHA3XsBRw&s);
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: red;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background: none;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background-color: white
+    ;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: none;
+
+}
+button[type="submit"] {
+    width: 100px;
+}
+
+button[type="submit"]:hover {
+    background-color: green;
+}
+
+@media screen and (max-width:600px) {
+    form {
+        width: 60px;
+    }
+    
+}
+

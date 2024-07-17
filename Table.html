@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>FRIENDS LIST</h2>
+
+    <table id="friendstable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+    <script>
+        const friends = [
+            { name: 'John Doe', email: 'john@gmail.com' },
+            { name: 'Jane Smith', email: 'jane@gmail.com' },
+            { name: 'Teddy Cate', email: 'teddy@yahhooo.com' }
+        ];
+
+        const TableBody = document.querySelector('#friendstable tbody');
+
+        friends.forEach(friend => {
+            const row = document.createElement('tr');
+
+            const namecell = document.createElement('td');
+            namecell.textContent = friend.name;
+            row.appendChild(namecell);
+
+            const emailcell = document.createElement('td');
+            row.appendChild(emailcell);
+
+            TableBody.appendChild(row);
+        }
+        );
+
+    </script>
+    
+</body>
+</html>

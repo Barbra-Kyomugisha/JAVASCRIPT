@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        } 
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        th {
+            background-color: aliceblue;
+        }
+        th {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>FRIENDS'NAMES</h2>
+
+    <table id="friendstable">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        const friends = [
+            { name: 'Aggie Turson', email: 'aggie@yaho.com' },
+            { name: 'Stephen Dreck', email: 'stephen@gmail.com' },
+            { name: 'Barbra Peterson', email: 'barbie.com' },
+        ];
+
+        const TableBody = document.querySelector('#friendstable tbody');
+
+        friends.forEach(friend => {
+            const row = document.createElement('tr');
+
+
+            const namecell = document.createElement('td');
+            const link = document.createElement('a');
+            link.href = `profile.html?name=${encodeURIComponent(friend.name)}&email=${encodeURIComponent(friend.email)}`;
+            link.textContent = friend.name;
+            namecell.appendChild(link);
+            row.appendChild(namecell);
+
+            TableBody.appendChild(row);
+
+        });
+    </script>
+    
+</body>
+</html>
